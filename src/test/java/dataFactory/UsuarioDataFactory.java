@@ -2,7 +2,7 @@ package dataFactory;
 
 import pojo.UsuarioPojo;
 
-public class UsuarioFactory {
+public class UsuarioDataFactory {
     public static UsuarioPojo logarComUsuarioPadrao()
     {
         UsuarioPojo usuario = new UsuarioPojo();

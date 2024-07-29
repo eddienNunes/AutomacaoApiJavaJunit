@@ -6,7 +6,7 @@ import pojo.ProdutoPojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProdutoFactory {
+public class ProdutDataFactory {
     public static ProdutoPojo criarProdutoComumComValorIgualA(double valor)
     {
         ProdutoPojo produto = new ProdutoPojo();
