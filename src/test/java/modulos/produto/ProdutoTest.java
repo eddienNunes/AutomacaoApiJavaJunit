@@ -29,11 +29,11 @@ public class ProdutoTest {
                         .path("data.token");
     }
 
-    @Test
+    @Test //Teste 1: Valor do Produto Igual a Zero
     @DisplayName("Verificar se o sistema impede o cadastro de um produto com valor igual a zero")
     public void testValorProdutoIgualZero(){
 
-    //Teste 1: Valor do Produto Igual a Zero
+
 
         given()
                 .contentType(ContentType.JSON)
@@ -48,11 +48,11 @@ public class ProdutoTest {
                 .statusCode(422);
     }
 
-    @Test
+    @Test //Caso de Teste 2: Valor do Produto Negativo
     @DisplayName("Verificar se o sistema impede o cadastro de um produto com valor negativo")
     public void testValorProdutoNegativo()
     {
-        //Caso de Teste 2: Valor do Produto Negativo
+
         given()
                 .contentType(ContentType.JSON)
                 .header("token", this.token)
@@ -65,11 +65,11 @@ public class ProdutoTest {
                 .statusCode(422);
     }
 
-    @Test
+    @Test // Caso de Teste 3: Valor do Produto Maior que Zero e Menor que 7.000,00
     @DisplayName("Verificar se o sistema permite o cadastro de um produto com valor válido")
     public void testValorProdutoValido()
     {
-        // Caso de Teste 3: Valor do Produto Maior que Zero e Menor que 7.000,00
+
         given()
                 .contentType(ContentType.JSON)
                 .header("token", this.token)
@@ -82,11 +82,11 @@ public class ProdutoTest {
                 .statusCode(201);
     }
 
-    @Test
+    @Test //Caso de Teste 4: Valor do Produto Igual a 7.000,00
     @DisplayName("Verificar se o sistema permite o cadastro de um produto com valor no limite superior permitido")
     public void testValorProdutoIgualSeteMil()
     {
-        //Caso de Teste 4: Valor do Produto Igual a 7.000,00
+
         given()
                 .contentType(ContentType.JSON)
                 .header("token", this.token)
@@ -99,10 +99,10 @@ public class ProdutoTest {
                 .statusCode(201);
     }
 
-    @Test
+    @Test // Caso de Teste 5: Valor do Produto Maior que 7.000,00
     @DisplayName("Verificar se o sistema impede o cadastro de um produto com valor superior ao limite permitido")
     public void testValorProdutoMaiorQueSeteMil(){
-       // Caso de Teste 5: Valor do Produto Maior que 7.000,00
+
 
         given()
                 .contentType(ContentType.JSON)
